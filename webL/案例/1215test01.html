@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+
+    .attab {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 900px;
+        height: 800px;
+        background-color: aqua;
+    }
+
+    .attab .tab_list {
+        width: 100%;
+        height: 100px;
+        background-color: antiquewhite;
+    }
+
+    .attab .tab_list ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+    }
+
+    .attab .tab_list ul li {
+        list-style: none;
+        width: 300px;
+        height: 100%;
+        line-height: 100px;
+        text-align: center;
+        border: 1px solid red;
+    }
+
+    .attab .tab_con .item {
+        display: none;
+    }
+
+    .current {
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="attab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">国内新闻</li>
+                <li>国际观察</li>
+                <li>IT世界</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">
+                <ul class="con_list" id="one">
+                    <li><a href="">初步分析：苏州吴江塌楼因私自对房屋结构进行改造</a></li>
+                    <li><a href="">澎湃新闻：新冠病毒疫苗“自愿接种”原则不可废</a></li>
+                    <li><a href="">新突破！我国无液氦稀释制冷机向绝对零度迈进</a></li>
+                    <li><a href="">挑衅！日本《防卫白皮书》首度提及“台湾稳定”问题</a></li>
+                    <li><a href="">好消息！我国可燃冰钻探和测井技术取得重要进展</a></li>
+            </div>
+            <div class="item">
+                </ul>
+                <!-- 国际观察对应的内容 -->
+                <ul class="con_list">
+                    <li><a href="">消息人士:“长赐”号货轮已离开埃及水域 进入地中海</a></li>
+                    <li><a href="">拜登又要与古巴人民站在一起，是何居心？</a></li>
+                    <li><a href=""> 这支驻阿军队“逃”得比美军还快 但同样有血债没还</a></li>
+                    <li><a href="">国际锐评：美国抗疫“全球第一”？滑天下之大稽！</a></li>
+                </ul>
+            </div>
+            <div class="item">
+                <!-- IT世界对应的内容 -->
+                <ul class="con_list">
+                    <li><a href="">传罗永浩将启动自动驾驶相关项目 交个朋友辟谣：假的</a></li>
+                    <li><a href="">消息称阿里巴巴等考虑收购紫光股份股权 或涉资500亿元</a></li>
+                    <li><a href="">拜腾回应被申请破产：法院未正式受理，正积极应对并寻求和解</a></li>
+                    <li><a href="">消息称谷歌将被法国监管机构罚款5亿欧元</a></li>
+                    <li><a href="">发羊腿了！京东宣布两年内员工平均年薪从14薪涨至16薪</a></li>
+                    <li><a href="">董明珠和华为鸿蒙，能炒出火花吗？</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script>
+    var tab_list = document.querySelector('.tab_list');
+    var lis = tab_list.querySelectorAll('li');
+    var items = document.querySelectorAll('.item');
+
+    //for循环绑定点击事件
+
+    for (var i = 0; i < lis.length; i++) {
+        //给小li设置索引号
+        lis[i].setAttribute('data-index', i);
+        lis[i].onclick = function () {
+            //干掉所有人，清除class
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].className = '';
+            }
+            this.className = 'current';
+            var index = this.getAttribute('data-index');
+            console.log(index);
+            for (var i = 0; i < items.length; i++) {  //排他
+                items[i].style.display = 'none';
+            }
+            items[index].style.display = 'block';
+        }
+    }
+</script>
+
+</html>

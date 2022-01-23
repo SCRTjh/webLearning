@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        height: 100px;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .box img {
+        height: 100px;
+        width: 100px;
+    }
+</style>
+
+<body>
+    <input type="button" value="b1" onclick="show()">
+    <input type="button" value="b2" onclick="show1(this)">
+    <div class="box">
+        <img src="images/拉姆.gif" alt="wu" id="im1">
+        <img src="images/雷姆.gif" alt="wu" id="im2">
+    </div>
+</body>
+<script>
+    function show() {
+        alert('1');
+    }
+    function show1(obj) {
+        alert(obj.type);
+        alert(obj.value);
+    }
+
+    let m1 = document.querySelector('.box #im1');
+    let m2 = document.querySelector('.box #im2');
+    let b = document.querySelector('body');
+
+    m1.addEventListener('mousemove', function () {
+        b.style.background = 'url(images/拉姆.gif)';
+    })
+    m2.addEventListener('mousemove', function () {
+        b.style.background = 'url(images/雷姆.gif)';
+    })
+
+</script>
+
+</html>

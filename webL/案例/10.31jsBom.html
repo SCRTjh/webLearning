@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .hour,
+    .minute,
+    .second {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        background-color: black;
+        color: white;
+        line-height: 50px;
+        text-align: center;
+        font-size: 24px;
+    }
+</style>
+
+<body>
+
+    <img src="./images/雷姆.gif" alt="" class="ad">
+
+    <span class="hour">1</span>
+    <span class="minute">2</span>
+    <span class="second">3</span>
+
+    手机号码:<input type="number"><button>发送</button>
+
+    <form action="11.01jsLocation.html">
+        用户名:<input type="text" name="uname">
+        <input type="submit" value="登录">
+    </form>
+
+
+
+
+
+
+
+    <script>
+
+        // 浏览器对象模型  window.
+        // 浏览器窗口交互的一些对象
+        // 1.js访问浏览器窗口的一个接口
+        // 2.全局作用域中的变量都会变成window对象的属性和方法
+
+        // window对象的常见事件
+
+        // window窗口加载事件
+        // window.onload=function()是窗口加载事件，当文件类容加载完成时触发该事件
+        // window.addEventListener('load',function(){}) 加载包含页面全部内容，页面dom元素 图片 flash css等等
+        // window.addEventListener('DOMContentLoaded',function(){}) 加载不包含 图片 flash css
+
+        // 调整窗口大小事件
+        // window.onresize=function(){}
+        // window.addEventListener('resize',function(){}) 窗口大小变化触发
+        // window.innerHeight window.innerWidth 获取屏幕高度，宽度
+        // 经常用作响应式布局
+
+
+        // 定时器 也叫回调函数
+        // window.setTimeout(调用函数,毫秒数)  
+        // window在调用时可以省略
+        // 调用函数可以直接写函数，函数名，'函数名()'
+        //因为定时器很多经常需要附加标识符
+
+        //5秒隐藏start
+        // var ad = document.querySelector('.ad');
+        // setTimeout(function () {
+        //     ad.style.display = 'none';
+        // }, 5000)
+        //5秒隐藏end
+
+
+        // 停止定时器
+        // window.clearTimeout(timeoutID)  var timer=setTimeout
+
+        // setInterval(回调函数,间隔毫秒数) 重复调用这个函数
+        // clearInterval(id)
+
+
+
+        // 倒计时start
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = + new Date(2021, 11, 1, 0, 0, 0); //返回用户输入时间总的毫秒数
+        countDown();  //清除空档
+        // 开启定时器
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var nowTime = + new Date(); //返回当前时间总的毫秒数
+            var times = (inputTime - nowTime) / 1000; //times是剩余时间总的秒数
+            var d = parseInt(times / 60 / 60 / 24);
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+            // return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+
+        //短信案例
+        var btn = document.querySelector('button');
+        var ts = 10;
+        btn.addEventListener('click', function () {
+            this.disabled = true;
+            var timer2 = setInterval(function () {
+                if (ts == 0) {
+                    clearInterval(timer2);
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                    ts = 10;
+                } else {
+                    btn.innerHTML = '还剩下' + ts + '秒';
+                    ts--;
+                }
+
+            }, 1000)
+
+        })
+
+        // 同步与异步
+        // 同步任务形成了一个执行栈
+        //js的异步任务是通过回调函数实现的
+        //先同步后异步 异步处理进程 事件循环
+
+        // location对象
+        // URL统一资源定位符
+        // location.href 获取或者设置整个url   //5秒自动跳转页面
+        // location.host 返回主机域名
+        // location.port 返回端口号 如果未写 返回空字符串
+        // location.pathname 返回路径
+        // location.search 返回参数
+        // location.hash 返回#后面内容
+
+
+
+    </script>
+</body>
+
+</html>

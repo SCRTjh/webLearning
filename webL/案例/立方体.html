@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>tjh正方体</title>
+		<style type="text/css">
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			body {
+				background-color: black;
+			}
+			
+			.box2 {
+				width:250px;
+				height:250px;
+				/* 添加一个白色边框 */
+				/* border:4px solid white; */
+				position:fixed;
+				left:calc(50% - 125px);
+				top:calc(50% - 125px);
+				transform-style:preserve-3d;
+				transform:rotatex(-15deg) rotatey(15deg);
+
+			}
+
+
+			
+			.box2>img {
+				width:100%;
+				height:100%;
+				position:absolute;
+				left:0px;
+				top:0px;
+				opacity:0.3;
+				box-shadow:0px 0px 15px 10px white;
+			}
+			.box2>img:nth-child(1) {
+				transform:translatez(125px);
+			}
+			.box2>img:nth-child(2) {
+				/* 面向方向为z轴 */
+				transform: rotatey(180deg) translatez(125px);
+			}
+			.box2>img:nth-child(3) {
+				transform: rotatey(90deg) translatez(125px);
+			}
+			.box2>img:nth-child(4) {
+				transform: rotatey(270deg) translatez(125px);
+			}
+			.box2>img:nth-child(5) {
+				transform: rotatex(90deg) translatez(125px);
+			}
+			.box2>img:nth-child(6) {
+				transform: rotatex(270deg) translatez(125px);
+			}
+			.box2>img:nth-child(7) {
+				transform:scale3d(0.5,0.5,0.5) translatez(125px);
+			}
+			.box2>img:nth-child(8) {
+				/* 面向方向为z轴 */
+				transform: scale3d(0.5,0.5,0.5) rotatey(180deg) translatez(125px) ;
+			}
+			.box2>img:nth-child(9) {
+				transform: scale3d(0.5,0.5,0.5) rotatey(90deg) translatez(125px);
+			}
+			.box2>img:nth-child(10) {
+				transform: scale3d(0.5,0.5,0.5) rotatey(270deg) translatez(125px) ;
+			}
+			.box2>img:nth-child(11) {
+				transform: scale3d(0.5,0.5,0.5) rotatex(90deg) translatez(125px) ;
+			}
+			.box2>img:nth-child(12) {
+				transform:  scale3d(0.5,0.5,0.5) rotatex(270deg) translatez(125px);
+			}
+			
+			.box2>img:nth-child(n+7) {
+				opacity:0.8;
+			}
+			
+
+		</style>
+	</head>
+	<body>
+		<div class="box2">
+			<img  src="img/2014.jpg" />
+			<img  src="img/2015.jpg" />
+			<img  src="img/2016.jpg" />
+			<img  src="img/2017.jpg" />
+			<img  src="img/2018上.jpg" />
+			<img  src="img/w01.jpg" />
+			<img  src="img/w02.jpg" />
+			<img  src="img/w03.jpg" />
+			<img  src="img/w04.jpg" />
+			<img  src="img/w05.jpg" />
+			<img  src="img/w06.jpg" />
+			<img  src="img/w07.jpg" />
+
+		</div>
+	</body>
+</html>

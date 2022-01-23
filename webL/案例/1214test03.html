@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 500px;
+        height: 300px;
+        border: 2px solid black;
+    }
+
+    .inp {
+        width: 500px;
+        height: 120px;
+        border: 2px solid black;
+    }
+
+    .inp textarea {
+        width: 500px;
+        height: 120px;
+    }
+
+    p {
+        margin: 5px;
+    }
+
+    p:nth-of-type(odd) {
+        text-align: left;
+    }
+
+    p:nth-of-type(even) {
+        text-align: right;
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+    <div class="inp">
+        <textarea id="text"></textarea>
+    </div>
+    <button class="sd">发送</button>
+    <button class="cl">清空</button>
+
+
+</body>
+<script>
+    let sentInfo = "";
+    let send = document.querySelector(".sd");
+    let box = document.querySelector(".box");
+    let clear = document.querySelector('.cl');
+
+
+    send.addEventListener("click", function (e) {
+        sent = document.getElementById("text").value;
+        box.innerHTML += `<p class="info">${sent}</p>`;
+    });
+
+
+    clear.addEventListener('click', function (e) {
+        box.innerHTML = ' '
+    })
+</script>
+
+</html>

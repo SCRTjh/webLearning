@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .attab {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 500px;
+        height: 200px;
+        border-left: 1px solid #8c8c8c;
+        border-right: 1px solid #8c8c8c;
+        border-bottom: 1px solid #8c8c8c;
+
+    }
+
+    .attab .tab_list {
+        width: 100%;
+        height: 30px;
+
+        background-color: antiquewhite;
+
+    }
+
+    .attab .tab_list ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .attab .tab_list ul li {
+        width: 25%;
+        line-height: 30px;
+        text-align: center;
+        border-left: 1px solid #8c8c8c;
+        border-right: 1px solid #8c8c8c;
+        border-bottom: 1px solid #8c8c8c;
+        border-top: 1px solid blue;
+        background-color: #eeeeee;
+
+    }
+
+    .attab .tab_icon {
+        width: 100%;
+        height: 200px;
+
+    }
+
+    .attab .tab_icon .item {
+        display: none;
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    .attab .tab_icon .item p {
+        margin-left: 10px;
+    }
+
+    .attab .tab_icon .item p:first-child {
+        margin-top: 30px;
+    }
+
+    .attab .tab_list ul .current {
+        background-color: white;
+        border-bottom: none;
+    }
+</style>
+
+<body>
+    <div class="attab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">网页设计</li>
+                <li>前端开发</li>
+                <li>人工智能</li>
+                <li>电商运营</li>
+            </ul>
+        </div>
+        <div class="tab_icon">
+            <div class="item" style="display: block;">
+                <p>HTML5+CSS3网页设计与制作</p>
+                <p>互联网产品设计思维与实践</p>
+                <p>Photoshop CS6图像设计案例教程</p>
+                <p>跨平台UI设计宝典</p>
+            </div>
+            <div class="item">
+                <p>JavaScript+jQuery交互式Web前端开发</p>
+                <p>Vue.js前端开发实战</p>
+                <p>微信小程序开发实战</p>
+                <p>JavaScript前端开发案例教程</p>
+            </div>
+            <div class="item">
+                <p>Python程序开发案例教程</p>
+                <p>Python数据分析与应用：从数据获取到可视化</p>
+                <p>Python实战编程:从零学Python</p>
+                <p>Python快速编程入门</p>
+            </div>
+            <div class="item">
+                <p>数据分析思维与可视化</p>
+                <p>淘宝天猫店美工设计实操：配色、布局、修图、装修</p>
+                <p>淘宝天猫店一本通： 开店、装修、运营、推广</p>
+                <p>网络营销文案策划</p>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        let tab_list = document.querySelector('.tab_list');
+        let lis = tab_list.querySelectorAll('li');
+        let items = document.querySelectorAll('.item');
+
+        //for循环绑定点击事件
+
+        for (let i = 0; i < lis.length; i++) {
+            //给小li设置索引号
+            lis[i].setAttribute('data-index', i);
+            lis[i].onclick = function () {
+                //干掉所有人，清除class
+                for (let i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current';
+                let index = this.getAttribute('data-index');  //h5 element.dataset.index 或[]
+                // console.log(index);  //h5如果多-划分，驼峰命名获取
+                for (let i = 0; i < items.length; i++) {  //排他
+                    items[i].style.display = 'none';
+                }
+                items[index].style.display = 'block';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

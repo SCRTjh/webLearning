@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>tjh环形动画</title>
+		<style type="text/css">
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			body {
+				background-color: black;
+			}
+			
+			.box {
+				width:250px;
+				height:250px;
+				/* 添加一个白色边框 */
+				/* border:4px solid white; */
+				position:fixed;
+				left:calc(50% - 100px);
+				top:calc(50% - 125px);
+				transform-style:preserve-3d;
+				transform:rotatex(-15deg);
+				animation: boxAni 20s infinite linear;
+				/* animation-iteration-count: infinite; */
+			}
+			/* 定义动画 */
+			@keyframes boxAni {
+				0%{
+					transform:rotatex(-15deg) rotatey(0deg);
+				}
+				100%{
+					transform:rotatex(-15deg) rotatey(360deg);
+				}
+			}
+			@keyframes imgAni1 {
+				0%{
+					transform:rotatey(30deg) translatez(600px);
+				}
+				100%{
+					transform:translatez(125px);
+				}
+			}
+			@keyframes imgAni2 {
+				0%{
+					transform:rotatey(60deg) translatez(600px);
+				}
+				100%{
+					transform: rotatey(180deg) translatez(125px);
+				}
+			}
+			@keyframes imgAni3 {
+				0%{
+					transform:rotatey(90deg) translatez(600px);
+				}
+				100%{
+					transform: rotatey(90deg) translatez(125px);
+				}
+			}
+			@keyframes imgAni4 {
+				0%{
+					transform:rotatey(120deg) translatez(600px);
+				}
+				100%{
+					transform: rotatey(270deg) translatez(125px);
+				}
+			}
+			@keyframes imgAni5 {
+				0%{
+					transform:rotatey(150deg) translatez(600px);
+				}
+				100%{
+					transform: rotatex(90deg) translatez(125px);
+				}
+			}
+			@keyframes imgAni6 {
+				0%{
+					transform:rotatey(180deg) translatez(600px);
+				}
+				100%{
+					transform: rotatex(270deg) translatez(125px);
+				}
+			}
+			@keyframes imgAni7 {
+				0%{
+					transform:rotatey(210deg) translatez(600px);
+				}
+				100%{
+					transform:scale3d(0.5,0.5,0.5) translatez(125px);
+				}
+			}
+			@keyframes imgAni8 {
+				0%{
+					transform:rotatey(240deg) translatez(600px);
+				}
+				100%{
+					transform: scale3d(0.5,0.5,0.5) rotatey(180deg) translatez(125px);
+				}
+			}
+			@keyframes imgAni9 {
+				0%{
+					transform:rotatey(270deg) translatez(600px);
+				}
+				100%{
+					transform: scale3d(0.5,0.5,0.5) rotatey(90deg) translatez(125px);
+				}
+			}
+			@keyframes imgAni10 {
+				0%{
+					transform:rotatey(300deg) translatez(600px);
+				}
+				100%{
+					transform: scale3d(0.5,0.5,0.5) rotatey(270deg) translatez(125px) ;
+				}
+			}
+			@keyframes imgAni11 {
+				0%{
+					transform:rotatey(330deg) translatez(600px);
+				}
+				100%{
+					transform: scale3d(0.5,0.5,0.5) rotatex(90deg) translatez(125px) ;
+				}
+			}
+			@keyframes imgAni12 {
+				0%{
+					transform:rotatey(360deg) translatez(600px);
+				}
+				100%{
+					transform:  scale3d(0.5,0.5,0.5) rotatex(270deg) translatez(125px);
+				}
+			}
+			
+			
+
+			
+			.box>img {
+				width:100%;
+				height:100%;
+				position:absolute;
+				left:0px;
+				top:0px;
+				box-shadow:0px 0px 15px 10px white;
+				opacity:0.3;
+			}
+			
+			.box>img:nth-child(1) {
+				transform:rotatey(30deg) translatez(600px);
+				animation:imgAni1 1s forwards linear 5s;
+			}
+			.box>img:nth-child(2) {
+				transform:rotatey(60deg) translatez(600px);
+				animation:imgAni2 1s forwards linear 5.25s;
+			}
+			.box>img:nth-child(3) {
+				transform:rotatey(90deg) translatez(600px);
+				animation:imgAni3 1s forwards linear 5.5s;
+			}
+			.box>img:nth-child(4) {
+				transform:rotatey(120deg) translatez(600px);
+				animation:imgAni4 1s forwards linear 5.75s;
+			}
+			.box>img:nth-child(5) {
+				transform:rotatey(150deg) translatez(600px);
+				animation:imgAni5 1s forwards linear 6s;
+			}
+			.box>img:nth-child(6) {
+				transform:rotatey(180deg) translatez(600px);
+				animation:imgAni6 1s forwards linear 6.25s;
+			}
+			.box>img:nth-child(7) {
+				transform:rotatey(210deg) translatez(600px);
+				animation:imgAni7 1s forwards linear 6.5s;
+			}
+			.box>img:nth-child(8) {
+				transform:rotatey(240deg) translatez(600px);
+				animation:imgAni8 1s forwards linear 6.75s;
+			}
+			.box>img:nth-child(9) {
+				transform:rotatey(270deg) translatez(600px);
+				animation:imgAni9 1s forwards linear 7s;
+			}
+			.box>img:nth-child(10) {
+				transform:rotatey(300deg) translatez(600px);
+				animation:imgAni10 1s forwards linear 7.25s;
+			}
+			.box>img:nth-child(11) {
+				transform:rotatey(330deg) translatez(600px);
+				animation:imgAni11 1s forwards linear 7.5s;
+			}
+			.box>img:nth-child(12) {
+				transform:rotatey(360deg) translatez(600px);
+				animation:imgAni12 1s forwards linear 7.75s;
+			}
+			.box>img:nth-child(n+7) {
+				opacity:0.8;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img  src="img/2014.jpg" />
+			<img  src="img/2015.jpg" />
+			<img  src="img/2016.jpg" />
+			<img  src="img/2017.jpg" />
+			<img  src="img/2018上.jpg" />
+			<img  src="img/w01.jpg" />
+			<img  src="img/w02.jpg" />
+			<img  src="img/w03.jpg" />
+			<img  src="img/w04.jpg" />
+			<img  src="img/w05.jpg" />
+			<img  src="img/w06.jpg" />
+			<img  src="img/w07.jpg" />
+		</div>
+	</body>
+</html>

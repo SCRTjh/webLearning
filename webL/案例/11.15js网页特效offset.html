@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w {
+            width: 1440px;
+            margin: 0px auto;
+        }
+
+        .header {
+            height: 100px;
+            background-color: red;
+        }
+
+        .banner {
+            height: 500px;
+            background-color: yellow;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: aqua;
+        }
+
+        .slider-bar {
+            position: relative;
+            height: 100px;
+            width: 50px;
+            background-color: antiquewhite;
+            top: 700px;
+            right: -1740px;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主题部分</div>
+
+
+
+
+
+
+
+    <script>
+//offset系列 距离父亲的位置
+//offsetLeft   有父亲以父亲为准，没有以body为准
+//offsetWidth 得到元素宽度
+//offsetParent 返回带有定位的父亲
+//parentNode //返回最近一级的父亲 亲爸爸
+
+//style只能获得行内样式 offset包含padding+margin
+//offset只读
+
+
+//鼠标按下 mousedown 获取鼠标在盒子内的坐标
+//鼠标移动的时候，把鼠标页面中的坐标，减去鼠标在盒子中的坐标就是模态框的坐标
+//加一个moveup事件，removeEL，move()
+
+//window.addE load f{js}
+
+//e.pageX - this.offsetLeft
+//style.left= x- mask.offsetWidth/2  +'px' 盒子跟鼠标走
+//if(maskX <= 0){ maskX=0;}else if(maskx>= pre.offsetWidth-mask.offsetWidth){maskX=}
+
+//放大镜大图片移动公式
+//遮挡层移动距离/遮挡层最大移动距离=大图片移动距离/大图片最大移动距离
+
+//元素可视区 client系列
+//clientTop返回上边框的大小
+//clientWidth 元素宽度,不包含边框
+
+//立即执行函数
+//(function(){})() 或者 (function(){}())  多个分号隔开 避免命名冲突
+//flexible分析 像素比 rem 重新加载触发pageshow事件 !火狐的后退不会触发onload
+
+//element.scrollTop 返回被卷去上侧距离，返回数值不带单位
+//element.scrollWidth 返回自身宽度，不包含边框
+//element.scrollHeight 返回自身高(长)度，不包含边框
+//scroll 滚动事件
+//window.pageYOffset 页面被卷去
+
+//兼容性
+//声明了DTD，使用了document.documentElement.scrollTop
+//未声明DTD，使用document.body.scrollTop
+//新方法window.pageYOffset,IE9开始支持
+
+//mouseenter只有鼠标经过自身才会触发,不会冒泡  mouseleave
+//mouseover经过子盒子也会触发
+
+
+//动画函数封装
+//核心setInterval,利用定时器不断重复操作，设置条件结束定时器
+
+//obj.timer
+//先清除再开新的
+
+//缓动动画
+//Math.ceil((目标值-现在位置)/10) 正值   判断step正负
+
+//回调函数:等进入的函数执行完毕后，执行回调函数
+//写到定时器结束位置
+
+
+
+    </script>
+</body>
+
+</html>

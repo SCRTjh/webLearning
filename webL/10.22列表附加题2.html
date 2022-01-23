@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(./案例/css/base.css);
+
+        .div1 {
+            width: 1040px;
+            height: 200px;
+            background-color: bisque;
+        }
+
+        .div1 div {
+            height: 50px;
+            width: 100%;
+        }
+
+        .div1 div img {
+            width: 26px;
+            height: 26px;
+
+        }
+
+        .div1 div p {
+            display: inline;
+            font-size: 16px;
+            color: #a84848;
+        }
+
+        .div1 ul {
+            display: flex;
+            flex-direction: row;
+            margin-left: 14px;
+        }
+
+        .div1 ul li {
+            position: relative;
+            width: 238px;
+            height: 130px;
+
+        }
+
+        .div1 ul li p {
+            color: white;
+        }
+
+        .div1 ul li:nth-child(1) {
+            background-color: #52a6b6;
+        }
+
+        .div1 ul li:nth-child(2) {
+            background-color: #55b9b6;
+        }
+
+        .div1 ul li:nth-child(3) {
+            background-color: #55ba7c;
+        }
+
+        .div1 ul li:nth-child(4) {
+            background-color: #a16580;
+        }
+
+
+
+        .div1 ul li img {
+            position: absolute;
+            width: 46px;
+            height: 46px;
+            top: 14px;
+            left: 14px;
+        }
+
+        .div1 ul li p:nth-child(3) {
+            position: absolute;
+            font-size: 44px;
+            top: 20px;
+            left: 90px;
+        }
+
+        .div1 ul li p:nth-child(4) {
+            position: absolute;
+            font-size: 14px;
+            top: 74px;
+            left: 90px;
+        }
+
+        .div1 ul li p:nth-child(5) {
+            position: absolute;
+            font-size: 14px;
+            top: 88px;
+            left: 90px;
+        }
+
+        .div1 ul li #img1 {
+            display: none;
+        }
+
+        .div1 ul li #img2 {
+            display: none;
+        }
+
+        .div1 ul li #img3 {
+            display: none;
+        }
+
+        .div1 ul li #img4 {
+            display: none;
+        }
+
+        /* .div1 ul li img:nth-child(2n) {
+            display: none;
+        } */
+
+        .div1 ul li:nth-child(1):hover {
+            background-color: #2b2b2b;
+        }
+
+        .div1 ul li:nth-child(2):hover {
+            background-color: #2b2b2b;
+        }
+
+        .div1 ul li:nth-child(3):hover {
+            background-color: #2b2b2b;
+        }
+
+        .div1 ul li:nth-child(4):hover {
+            background-color: #2b2b2b;
+        }
+
+        .div1 ul li:nth-child(1):hover #img1 {
+            display: block;
+        }
+
+        .div1 ul li:nth-child(2):hover #img2 {
+            display: block;
+        }
+
+        .div1 ul li:nth-child(3):hover #img3 {
+            display: block;
+        }
+
+        .div1 ul li:nth-child(4):hover #img4 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <div><img src="images/iconh.png" alt="">
+            <p>MUSIC---精选歌单</p>
+        </div>
+        <ul>
+            <li><img src="images/icon1.png" alt="">
+                <img src="images/icon5.png" alt="" id="img1">
+                <p>Radio</p>
+                <p>音乐达人</p>
+                <p>随便听听>></p>
+            </li>
+            <li><img src="images/icon2.png" alt="">
+                <img src="images/icon6.png" alt="" id="img2">
+                <p>Song</p>
+                <p>音乐达人</p>
+                <p>最新单曲>></p>
+            </li>
+            <li><img src="images/icon3.png" alt="">
+                <img src="images/icon7.png" alt="" id="img3">
+                <p>Album</p>
+                <p>音乐达人</p>
+                <p>音乐专辑>></p>
+            </li>
+            <li><img src="images/icon4.png" alt="">
+                <img src="images/icon8.png" alt="" id="img4">
+                <p>MV</p>
+                <p>音乐达人</p>
+                <p>劲爆>></p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

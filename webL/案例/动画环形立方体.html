@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		@import url(./css/squeen.css);
+		@import url(./css/huan.css);
+
+		#id1>img {
+			transition: all 0.8s linear;
+		}
+
+		#id1>img:nth-child(1) {
+			transition-delay: 0s;
+		}
+
+		#id1>img:nth-child(2) {
+			transition-delay: 0.1s;
+		}
+
+		#id1>img:nth-child(3) {
+			transition-delay: 0.2s;
+		}
+
+		#id1>img:nth-child(3) {
+			transition-delay: 0.3s;
+		}
+
+		#id1>img:nth-child(4) {
+			transition-delay: 0.4s;
+		}
+
+		#id1>img:nth-child(5) {
+			transition-delay: 0.5s;
+		}
+
+		#id1>img:nth-child(6) {
+			transition-delay: 0.6s;
+		}
+
+		#id1>img:nth-child(7) {
+			transition-delay: 0.8s;
+		}
+
+		#id1>img:nth-child(9) {
+			transition-delay: 0.9s;
+		}
+
+		#id1>img:nth-child(10) {
+			transition-delay: 1s;
+		}
+
+		#id1>img:nth-child(11) {
+			transition-delay: 1.1s;
+		}
+
+		#id1>img:nth-child(12) {
+			transition-delay: 1.2s;
+		}
+	</style>
+</head>
+
+<body>
+	<button type="button" onclick="startAni()">开始旋转</button>
+	<button type="button" onclick="endAni()">停止旋转</button>
+	<button type="button" onclick="changeToHuan()">环形</button>
+	<button type="button" onclick="changeToSquare()">正方体</button>
+	<div id="id1" class="box">
+		<img src="./images/雷姆.gif" />
+		<img src="./images/雷姆.gif" />
+		<img src="./images/雷姆.gif" />
+		<img src="./images/雷姆.gif" />
+		<img src="./images/雷姆.gif" />
+		<img src="./images/雷姆.gif" />
+		<img src="./images/拉姆.gif" />
+		<img src="./images/拉姆.gif" />
+		<img src="./images/拉姆.gif" />
+		<img src="./images/拉姆.gif" />
+		<img src="./images/拉姆.gif" />
+		<img src="./images/拉姆.gif" />
+	</div>
+</body>
+<script type="text/javascript">
+	function changeToHuan() {
+		var div1 = document.getElementById("id1");
+		div1.className = "box";
+	}
+	function changeToSquare() {
+		var div1 = document.getElementById("id1");
+		div1.className = "box2";
+	}
+	function startAni() {
+		var div1 = document.ElementById("id1");
+		div1.style.animationPlayState = "running";
+	}
+	function endAni() {
+		var div1 = document.ElementById("id1");
+		div1.style.animationPlayState = "pause";
+	}
+</script>
+
+</html>

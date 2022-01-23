@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+            /* 弹性盒子布局 */
+            display: flex;
+            /* space-between:先贴两边，再平分剩余空间 */
+            justify-content: space-between;
+        }
+
+        .box div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* float: left; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="son1"></div>
+        <div class="son1"></div>
+        <div class="son1"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .main p {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 10px 0;
+        border-bottom: 3px dashed rosybrown;
+    }
+
+
+    .main div {
+        background-color: blue;
+        font-size: 18px;
+    }
+
+    .main div span {
+        font-size: 24px;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <p>pickme~~~</p>
+        <div>投票<span></span><button>投票</button></div>
+    </div>
+
+</body>
+<script>
+    let c = 0;
+    let sp = document.querySelector('.main div span');
+    sp.innerHTML = '{' + c + '}';
+    let b = document.querySelector('.main div button');
+    b.addEventListener('click', function () {
+        c++;
+        sp.innerHTML = '{' + c + '}';
+    })
+
+
+</script>
+
+</html>

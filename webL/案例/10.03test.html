@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.03test</title>
+    <style>
+        .firstd {
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+            transform: translate(500px, 100px) rotate(45deg);
+        }
+
+        .secondd {
+            position: relative;
+            width: 249px;
+            height: 35px;
+            border: 1px solid black;
+        }
+
+        .secondd::after {
+            content: "";
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            width: 15px;
+            height: 15px;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            transform: rotate(45deg);
+            transition: all 0.2s;
+        }
+
+        .secondd:hover:after {
+            transform: rotate(225deg);
+        }
+
+        .thirdd {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+            margin: auto;
+            transition: all 1s;
+            transform-origin: left bottom;
+            /*默认值为 50% 50%*/
+        }
+
+        .thirdd:hover {
+            transform: rotate(360deg);
+        }
+
+        .adiv {
+            overflow: hidden;
+            height: 200px;
+            width: 200px;
+            margin: 100px auto;
+            border: 1px solid aqua;
+        }
+
+        .adiv::before {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            background-color: aqua;
+            transform: rotate(180deg);
+            transform-origin: left bottom;
+            transition: all 0.5s;
+        }
+
+        .adiv:hover::before {
+            transform: rotate(0deg);
+        }
+
+        .bdiv {
+            height: 300px;
+            width: 300px;
+            background-color: cyan;
+            margin: 500px auto;
+        }
+
+        .bdiv:hover {
+            transform: translate(100px, 100px) rotate(45deg) scale(2, 3);
+        }
+
+
+        @keyframes move {
+            0% {
+                transform: translate(0px);
+            }
+
+            50% {
+                transform: translate(800px);
+            }
+
+            100% {
+                transform: translate(300px);
+                /*from{}to{}*/
+            }
+        }
+
+        .cdiv {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+            animation-name: move;
+            animation-duration: 2s;
+            /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);linear ease stps(10) */
+            /*运动曲线*/
+            animation-iteration-count: infinite;
+            /*播放次数*/
+            animation-direction: alternate;
+            /*播放方向*/
+            /* animation-fill-mode: backwards; */
+            /*规定结束后的状态*/
+        }
+
+        .cdiv:hover {
+            animation-play-state: paused;
+            /*播放状态*/
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="firstd">1</div>
+    <div class="secondd"></div>
+    <div class="thirdd"></div>
+    <div class="adiv"></div>
+    <div class="bdiv"></div> -->
+    <div class="cdiv"></div>
+
+
+</body>
+
+</html>

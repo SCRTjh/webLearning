@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="base.css">
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?s66vt1');
+            src: url('fonts/icomoon.eot?s66vt1#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?s66vt1') format('truetype'),
+                url('fonts/icomoon.woff?s66vt1') format('woff'),
+                url('fonts/icomoon.svg?s66vt1#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        .banner {
+            height: 500px;
+            width: 1062px;
+            background-color: aqua;
+            margin: 0 auto;
+        }
+
+        .banner ul {
+            float: left;
+            height: 500px;
+            width: 226px;
+        }
+
+        .banner ul li {
+            position: relative;
+            float: left;
+            height: 98px;
+            width: 100%;
+            padding-left: 24px;
+            line-height: 98px;
+            font-family: 'icomoon';
+            font-size: 24px;
+            background-color: #eee;
+        }
+
+        .banner ul li::after {
+            position: absolute;
+            right: 25px;
+            line-height: 98px;
+            content: '';
+            font-size: 28px;
+            color: #ff6600;
+        }
+
+        .banner ul li:hover {
+            background-color: #dbcaca;
+        }
+
+        .banner ul li :nth-child(1):hover .nav-img {
+            display: block;
+        }
+
+        .banner .nav-img {
+            display: none;
+            float: left;
+            height: 500px;
+            width: 836px;
+            background-color: antiquewhite;
+        }
+
+        .banner .nav-img img {
+            height: 500px;
+            width: 836px;
+        }
+
+        .banner .nav-img a {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <ul>
+            <li>女装</li>
+            <li>女鞋<a href="#"></a></li>
+            <li>化妆品<a href="#"></a></li>
+            <li>腕表<a href="#"></a></li>
+            <li>图书<a href="#"></a></li>
+        </ul>
+        <div class="nav-img">
+            <a href="#"><img src="../images/nvzhuang.jpeg" alt="无法显示"></a>
+            <a href="#"><img src="../images/nvxie.jpeg" alt="无法显示"></a>
+            <a href="#"><img src="../images/huazhuangpin.jpeg" alt="无法显示"></a>
+            <a href="#"><img src="../images/shoubiao.jpeg" alt="无法显示"></a>
+            <a href="#"><img src="../images/tushu.jpeg" alt="无法显示"></a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

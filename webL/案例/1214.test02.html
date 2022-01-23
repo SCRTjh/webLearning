@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    .box {
+        width: 1600px;
+        height: 500px;
+
+    }
+
+    .box div {
+        float: left;
+        height: 250px;
+        width: 200px;
+
+        margin-left: 100px;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div><img src="课设img1214/off.png" alt="" class="light"></div>
+        <div><img src="课设img1214/off.png" alt="" class="light"></div>
+        <div><img src="课设img1214/off.png" alt="" class="light"></div>
+        <div><img src="课设img1214/off.png" alt="" class="light"></div>
+    </div>
+
+    <div><img src="课设img1214/switch_off.png" alt="" class="switch"></div>
+
+    <script>
+        let lights = document.querySelectorAll('.box .light');
+        let sw = document.querySelector('.switch');
+        let box = document.querySelector('.box');
+
+
+        box.addEventListener('click', function (e) {
+            // console.log(e.target.getAttribute('src'));
+            if (e.target.getAttribute('src') === '课设img1214/off.png') {
+                e.target.src = '课设img1214/on.png';
+            } else {
+                e.target.src = '课设img1214/off.png';
+            }
+        })
+        sw.addEventListener('click', (e) => {
+
+            if (e.target.getAttribute('src') == '课设img1214/switch_off.png') {
+                console.log(e.target.src)
+                for (let i = 0; i < lights.length; i++) {
+                    lights[i].src = '课设img1214/on.png';
+                }
+                e.target.src = '课设img1214/switch_on.png';
+            } else {
+                for (let i = 0; i < lights.length; i++) {
+                    lights[i].src = '课设img1214/off.png';
+                }
+                e.target.src = '课设img1214/switch_off.png';
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

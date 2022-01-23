@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+
+
+    <script>
+        console.log(location.search);
+
+        var parms = location.search.substr(1); //参数?=uname=andy  起始位置,截取几个字符 去掉? 
+        var arr = parms.split('='); //分成数组
+        var h1 = document.querySelector('h1');
+        h1.innerHTML = arr[1] + '欢迎你';
+
+        // location.assign()  //跳转，可后退
+        // location.replace() //不可后退
+        //location.reload()  //刷新页面 参数true强制刷新
+
+
+
+        // navigator对象
+        // navigator.userAgent 可显示用的浏览器……
+        //if(navigator.useAgent.match(iPad|Android)){window.location.href=''}
+
+        // history对象
+        // history.back() 后退功能
+        // history.forward() 前进功能
+        // history.go 参数1是前进一个页面 -1是后退1个页面
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h2 {
+        padding-left: 100px;
+    }
+
+    form label span {
+        display: inline-block;
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    form button {
+        height: 60px;
+        width: 125px;
+        margin: 20px 60px;
+        background-color: #29fd2f;
+        border: none;
+    }
+</style>
+
+<body>
+    <h2>欢迎注册</h2>
+    <form action="">
+        <label for="uname"><span>昵称:</span></label>
+        <input type="text" id="uname"><br />
+        <label for="pw"><span>密码:</span></label>
+        <input type="password" id="pw"><br />
+        <span>性别:</span>
+        <label for="male">男</label><input type="radio" name="sexb" id="male">
+        <label for="female">女</label><input type="radio" name="sexb" id="female">
+        <br />
+        <span>生日:</span>
+        <select name="" id="">
+            <option value="2000">2000年</option>
+            <option value="2001" selected="selected">2001年</option>
+            <option value="2002">2002年</option>
+        </select>
+        <select name="" id="">
+            <option value="1">1月</option>
+            <option value="2" selected="selected">2月</option>
+            <option value="3">3月</option>
+        </select>
+        <select name="" id="">
+            <option value="1">1日</option>
+            <option value="2" selected="selected">2日</option>
+            <option value="3">3日</option>
+        </select>
+        <br />
+        <label for="pn"><span>手机号码:</span></label>
+        <input type="text" name="" id="pn">
+        <br />
+        <button>立即注册</button>
+        <br />
+        <label for="ctr"><input type="checkbox" id="ctr">我已阅读并同意服务提条款和隐私政策</label>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .search {
+        position: relative;
+        width: 178px;
+        margin: 100px;
+    }
+
+    .con {
+        display: none;
+        position: absolute;
+        top: -40px;
+        width: 171px;
+        border: 1px solid rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        padding: 5px 0;
+        font-size: 18px;
+        line-height: 20px;
+        color: #333;
+    }
+</style>
+
+<body>
+
+    <input type="text">
+
+    <div class="search">
+        <div class="con">
+            123
+        </div>
+        <input type="text" placeholder="请输入您的快递单号" class="jd">
+
+
+    </div>
+
+    <script>
+
+        // 常用键盘事件
+        // onkeyup,onkeydown,onkeypress(不识别功能键，ctrl,shift,箭头等)
+        //注意，如果addEL 不需要加on
+        // 三个事件的执行顺序是down->press->up
+
+
+        // keycode 该键的ascii码值
+        // 1.keyup和keydown事件不区分字母大小写 a和A得到的都是65
+        // 2.kepress事件区分大小写
+
+        document.addEventListener('keyup', function (e) {
+            if (e.keyCode === 65) {
+                alert('你按下了a键');
+            }
+        })
+
+        //京东s键案例start
+        var search = document.querySelector('input')
+        document.addEventListener('keydown', function (e) {
+            if (e.keyCode === 83) {
+                search.focus();
+            }
+        })
+        //京东s键案例end
+
+        //京东快递单号start
+        var con = document.querySelector('.con');
+        var jd_input = document.querySelector('.jd');
+        jd_input.addEventListener('keyup', function () {
+            if (this.value == '') {
+                con.style.display = 'none';
+            } else {
+                con.style.display = 'block';
+                con.innerText = this.value;
+            }
+        })
+
+        // 当我们失去焦点就隐藏con盒子
+        jd_input.addEventListener('blur', function () {
+            con.style.display = 'none';
+        })
+        // 当我们获得焦点就显示这个con盒子
+        jd_input.addEventListener('focus', function () {
+            con.style.display = 'block';
+        })
+
+
+        //京东快递单号end
+        //注意，keydown和keypress在文本框里面的特点：他们两个事件触发的时候，文字还没落入文本中
+        //keyup时文字已经在文本框中
+
+
+
+    </script>
+</body>
+
+</html>

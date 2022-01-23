@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .box {
+        width: 600px;
+        height: 600px;
+        border: 1px solid black;
+        margin: 0 auto;
+    }
+
+    .box .bg {
+        width: 200px;
+        height: 435px;
+        border: 1px solid black;
+        margin: 15px auto 0;
+        border-radius: 30px;
+        background-image: url(课设img1214/1.jpg);
+        background-size: cover;
+    }
+
+    /* 壁纸区域 */
+    .tab {
+        width: 600px;
+        height: 100px;
+        background-color: pink;
+        margin-top: 50px;
+    }
+
+    .tab div {
+        float: left;
+        width: 50px;
+        height: 75px;
+        border: 1px solid black;
+        margin-left: 25px;
+        margin-top: 10px;
+        background-size: cover;
+    }
+
+    .tab #tab1 {
+        background-image: url(课设img1214/1.jpg);
+    }
+
+    .tab #tab2 {
+        background-image: url(课设img1214/2.jpg);
+    }
+
+    .tab #tab3 {
+        background-image: url(课设img1214/3.jpg);
+    }
+
+    .tab #tab4 {
+        background-image: url(课设img1214/4.jpg);
+    }
+
+    .tab #tab5 {
+        background-image: url(课设img1214/5.jpg);
+    }
+
+    .tab #tab6 {
+        background-image: url(课设img1214/6.jpg);
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="bg"></div>
+        <div class="tab">
+            <div class="tabItem" id="tab1"></div>
+            <div class="tabItem" id="tab2"></div>
+            <div class="tabItem" id="tab3"></div>
+            <div class="tabItem" id="tab4"></div>
+            <div class="tabItem" id="tab5"></div>
+            <div class="tabItem" id="tab6"></div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let tabItems = document.querySelectorAll('.tab .tabItem');
+        let bg = document.querySelector('.box .bg');
+
+
+        for (let i = 0; i < tabItems.length; i++) {
+            tabItems[i].addEventListener('click', function () {
+                bg.style.backgroundImage = 'url(课设img1214/' + (i + 1) + '.jpg';   //'url('+this.src+')'
+            })
+        }
+
+    </script>
+</body>
+
+</html>

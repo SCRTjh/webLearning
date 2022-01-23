@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(./案例/css/base.css);
+
+        h2 {
+            display: block;
+            text-align: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 700px;
+            width: 1250px;
+            margin: auto;
+        }
+
+        ul li {
+            width: 290px;
+            height: 340px;
+            margin-right: 10px;
+
+            border: 1px solid blue;
+        }
+
+        ul li:nth-child(1) {
+            margin-left: 25px;
+        }
+
+        ul li:nth-child(5) {
+            margin-left: 25px;
+        }
+
+        ul li:nth-child(4n) {
+            margin-left: 0px;
+        }
+
+        ul li img {
+            display: block;
+            width: 172px;
+            height: 220px;
+            margin: 10px auto 0px;
+        }
+
+        ul li p {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        ul li p:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        ul li p:nth-child(4) {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>热卖推荐</h2>
+    <ul>
+        <li><img src="images/iphone8.jpg" alt="">
+            <p>苹果IPhone8</p>
+            <p>双面全玻璃设计抗水防尘</p>
+            <p>￥5888.00</p>
+        </li>
+        <li><img src="images/R11plus.png" alt="">
+            <p>R11Plus 全网通</p>
+            <p>6G运存前后200万拍摄手机</p>
+            <p>￥3699.00</p>
+        </li>
+        <li><img src="images/Galaxy.png" alt="">
+            <p>三星Galaxy Note8</p>
+            <p>双视曲面屏，双镜头防抖</p>
+            <p>￥5751.00</p>
+        </li>
+        <li><img src="images/x9golden.png" alt="">
+            <p>X9是全网通</p>
+            <p>应用分屏 双引擎闪充</p>
+            <p>￥2498.00</p>
+        </li>
+        <li><img src="images/meizu pro6.jpg" alt="">
+            <p>Meizu/魅族 Pro6 全网通</p>
+            <p>四轴防抖相机，64G内存</p>
+            <p>￥1899.00</p>
+        </li>
+        <li><img src="images/360 N5.jpg" alt="">
+            <p>360 N5 全网通</p>
+            <p>6G超大运存|骁龙653|4000mAh电池</p>
+            <p>￥1299.00</p>
+        </li>
+        <li><img src="images/y67role.png" alt="">
+            <p>Y67 全网通</p>
+            <p>1600w柔光自拍 正面指纹解锁</p>
+            <p>￥1798.00</p>
+        </li>
+        <li><img src="images/y55golden.png" alt="">
+            <p>Y55全网通</p>
+            <p>5.2英寸的小优雅</p>
+            <p>￥1098.00</p>
+        </li>
+    </ul>
+</body>
+
+</html>

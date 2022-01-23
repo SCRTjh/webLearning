@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .mainbox {
+            width: 1200px;
+            height: 400px;
+            margin: 0px auto;
+            border: 1px solid aqua;
+            background-color: black;
+        }
+
+        .mainbox video {
+            display: none;
+            float: left;
+            width: 800px;
+            margin: 20px 10px;
+        }
+
+        .mainbox .leftvideo {
+            display: block;
+        }
+
+
+        .mainbox ul {
+            float: right;
+            width: 350px;
+            height: 338px;
+            margin: 20px 10px 0px 0px;
+        }
+
+        .mainbox ul li {
+            float: left;
+            height: 100px;
+            width: 100%;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .mainbox ul li img {
+            float: left;
+            height: 100px;
+            width: 180px;
+        }
+
+        span {
+            display: block;
+        }
+
+        .mainbox ul li span {
+            float: left;
+            height: 100%;
+            width: 150px;
+            margin-left: 10px;
+        }
+
+        .mainbox ul .current {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainbox">
+        <video src="素材/movie.webm" controls="controls" autoplay="autoplay" loop="loop" muted="muted"
+            class="leftvideo"></video>
+
+        <video src="素材/pian.mp4" controls="controls" autoplay="autoplay" loop="loop" muted="muted"></video>
+
+        <video src=" " poster=" images/雷姆.gif"></video>
+
+        <ul>
+            <li><img src=" images/1(1).jpg" alt="" style="color: green;"><span>青蛙王子在沙漠遇到白雪公主拯救………………</span></li>
+            <li><img src="images/2(1).jpg" alt=""><span>青蛙王子在沙漠遇到白雪公主拯救………………</span></li>
+            <li><img src="images/3.jpg" alt=""> <span>青蛙王子在沙漠遇到白雪公主拯救………………</span></li>
+        </ul>
+    </div>
+
+
+    <script>
+
+        var ul = document.querySelector('ul');
+        var lis = ul.querySelectorAll('li');
+        var mbox = document.querySelector('.mainbox');
+        var mvideo = mbox.querySelectorAll('video');
+        console.log(lis);
+        console.log(mvideo);
+
+        for (var i = 0; i < lis.length; i++) {
+
+            lis[i].setAttribute('data-index', i); //准备绑定属性
+
+            lis[i].addEventListener('mouseover', function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current';
+                var index = this.getAttribute('data-index'); //用于绑定视频
+                // console.log(i); 这里i TM是3！！！！
+                // var index = i;
+                for (var i = 0; i < mvideo.length; i++) {
+                    console.log(mvideo[i]);
+                    mvideo[i].style.display = 'none';
+                }
+                mvideo[index].style.display = 'block';
+
+            })
+        }
+
+
+
+    </script>
+</body>
+
+</html>

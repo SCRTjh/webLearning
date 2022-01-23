@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="base.css">
+    <style>
+        nav ul {
+            height: 40px;
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #ececec;
+            box-shadow: 5px 5px 5px #8e9090;
+        }
+
+        ul li {
+            float: left;
+            display: block;
+            height: 40px;
+            width: 250px;
+            line-height: 40px;
+            text-align: center;
+
+        }
+
+        ul li:hover {
+            background-color: #00714c;
+
+        }
+
+        ul li div {
+            display: none;
+            height: 100px;
+            width: 300px;
+            background-color: #eee;
+        }
+
+        ul li:hover div {
+            display: block;
+        }
+
+        ul li div a {
+            float: left;
+            height: 25px;
+            width: 80px;
+            margin: 10px 5px;
+            line-height: 25px;
+        }
+
+        ul li div a:hover {
+            color: #00714c;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>网站首页
+                <div>
+                    <a>学校</a>
+                </div>
+            </li>
+            <li>学校概况
+                <div>
+                    <a href="#">学校简介</a>
+                    <a href="#">现任领导</a>
+                </div>
+            </li>
+            <li>院系设置
+                <div>
+                    <a href="#">学校</a>
+                </div>
+            </li>
+            <li>师资队伍
+                <div>
+                    <a href="#">学校</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

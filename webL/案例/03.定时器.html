@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="启动定时器" name="" id="" onclick="start()">
+    <input type="button" value="停止定时器" onclick="stop()">
+
+    <script>
+        var num = 0;
+        var timer = null;
+        // 重复调用的方法
+        function show() {
+            console.log("num:" + num, "timer:" + timer);
+            num++;
+        }
+
+        // 启动方法
+        function start() {
+            timer = setInterval(show, 1000);
+        }
+
+        //停止定时器
+        function stop() {
+            window.clearInterval(timer);
+            console.log("定时器停止了");
+        }
+    </script>
+</body>
+
+</html>

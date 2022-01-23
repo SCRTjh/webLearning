@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            /* 取消下划线 */
+            text-decoration: none;
+            color: #333;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        /* 最外层 */
+        .main {
+            width: 600px;
+            height: 240px;
+            border: 1px solid #000;
+            margin: 80px auto;
+        }
+
+        /* 新闻标题 */
+        .title_list {
+            width: 600px;
+            height: 50px;
+            background-color: pink;
+            /* 弹性盒子布局 */
+            display: flex;
+            /*  */
+            justify-content: space-between;
+        }
+
+
+
+        .title_list li {
+            width: 200px;
+            /* 文字水平居中 */
+            text-align: center;
+            /* 文字垂直居中 */
+            line-height: 50px;
+
+        }
+
+        /* 新闻对应的内容 */
+        .con_list li {
+            line-height: 30px;
+            margin-left: 20px;
+        }
+
+        /* 隐藏元素 */
+        .con_list {
+            display: none;
+        }
+
+        #one {
+            display: block;
+        }
+
+        /* 当标题被选中时的样式 */
+        .t_active {
+            border: 1px solid #000;
+            /* 取消底部的边框 */
+            border-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 最外层盒子 -->
+    <div class="main">
+        <!-- 新闻标题部分 -->
+        <ul class="title_list">
+            <li class="t_active title_item" onclick="show(0)">国内新闻</li>
+            <li class="title_item" onclick="show(1)">国际观察</li>
+            <li class="title_item" onclick="show(2)">IT世界</li>
+        </ul>
+        <!-- 国内新闻对应的内容 -->
+        <ul class="con_list" id="one">
+            <li><a href="">初步分析：苏州吴江塌楼因私自对房屋结构进行改造</a></li>
+            <li><a href="">澎湃新闻：新冠病毒疫苗“自愿接种”原则不可废</a></li>
+            <li><a href="">新突破！我国无液氦稀释制冷机向绝对零度迈进</a></li>
+            <li><a href="">挑衅！日本《防卫白皮书》首度提及“台湾稳定”问题</a></li>
+            <li><a href="">好消息！我国可燃冰钻探和测井技术取得重要进展</a></li>
+        </ul>
+        <!-- 国际观察对应的内容 -->
+        <ul class="con_list">
+            <li><a href="">消息人士:“长赐”号货轮已离开埃及水域 进入地中海</a></li>
+            <li><a href="">拜登又要与古巴人民站在一起，是何居心？</a></li>
+            <li><a href=""> 这支驻阿军队“逃”得比美军还快 但同样有血债没还</a></li>
+            <li><a href="">国际锐评：美国抗疫“全球第一”？滑天下之大稽！</a></li>
+        </ul>
+        <!-- IT世界对应的内容 -->
+        <ul class="con_list">
+            <li><a href="">传罗永浩将启动自动驾驶相关项目 交个朋友辟谣：假的</a></li>
+            <li><a href="">消息称阿里巴巴等考虑收购紫光股份股权 或涉资500亿元</a></li>
+            <li><a href="">拜腾回应被申请破产：法院未正式受理，正积极应对并寻求和解</a></li>
+            <li><a href="">消息称谷歌将被法国监管机构罚款5亿欧元</a></li>
+            <li><a href="">发羊腿了！京东宣布两年内员工平均年薪从14薪涨至16薪</a></li>
+            <li><a href="">董明珠和华为鸿蒙，能炒出火花吗？</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function show(index) {
+            //获取所有标题li标签
+            var titles = document.getElementsByClassName("title_item");
+            //获取ul标签  对应的内容
+            var con_list = document.getElementsByClassName("con_list");
+
+            //将所有的li标签回复到默认样式
+            for (var i = 0; i < con_list.length; i++) {
+                con_list[i].style.display = "none";
+                titles[i].className = "title_item";
+            }
+
+            //给当前被选中的Li添加属性 
+            titles[index].className += "t_active";
+            //显示文本
+            con_list[index].style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
