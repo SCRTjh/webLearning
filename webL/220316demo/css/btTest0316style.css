@@ -1,0 +1,10 @@
+#boxout{
+    /* height: 300px;
+    width: 500px; */
+    border: 1px solid red;
+}
+
+#box{
+    border: 1px solid cyan;
+    /* margin-left: 10px; */
+}
