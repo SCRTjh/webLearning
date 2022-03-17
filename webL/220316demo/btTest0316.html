@@ -40,11 +40,85 @@
     <p class="text-uppercase">Uppercased text.</p>
     <p class="text-capitalize">Capitalized text.</p>
     <abbr title="缩略语">缩</abbr><abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
+    <form action="" class="form-inline">
+        <div class="form-group">
+            <label for="dollar"></label>
+            <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" name="dollar" id="dollar" class="form-control" placeholder="amount">
+                <div class="input-group-addon">.00</div>
+            </div>
+            <button type="submit" class="btn btn-primary">submit</button>
+        </div>
+    </form>
+    <!-- 水平表单开始 -->
+    <form class="form-horizontal" id="commentForm">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Sign in</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <select multiple class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group has-success has-feedback">
+            <div class="col-md-6 col-md-push-3">
+                <label for="email1">Email</label>
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="email" name="email" id="email1" class="form-control input-lg"> <!-- 验证邮箱 -->
+                    <span class="glyphicon form-control-feedback" id="fb"></span>
+                </div>
+
+            </div>
+        </div>
+    </form>
 
 </body>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
     integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
     crossorigin="anonymous"></script>
+
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/jq.js"></script>
 

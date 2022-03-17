@@ -17,4 +17,13 @@ $(document).ready(function () {
     $("#addDiv").click(function () {
         $("#boxout").append("<div class='col-md-6' id='box'>追加</div>");
     });
+    $("#email1").change(function () {      //邮箱验证
+        $("#fb").removeClass("glyphicon-ok").removeClass("glyphicon-remove");
+        let reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+        if (reg.test($("#email1").val())) {
+            $("#fb").toggleClass("glyphicon-ok");
+        } else {
+            $("#fb").toggleClass("glyphicon-remove");
+        }
+    });
 });
