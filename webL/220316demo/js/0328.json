@@ -1,0 +1,17 @@
+{
+    "success": "1",
+    "result": [
+        {
+            "src": "img/leishen.jpg"
+        },
+        {
+            "src": "img/kewei.jpg"
+        },
+        {
+            "src": "img/heimao.jpg"
+        },
+        {
+            "src": "img/edu.jpg"
+        }
+    ]
+}

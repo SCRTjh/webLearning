@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            height: 100px;
+            width: 200px;
+            border: 1px solid cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+
+    <script>
+        const result = document.getElementById("result");
+
+        result.onclick = () => {
+            const xhr = new XMLHttpRequest();
+
+            //设置响应类型
+            // xhr.responseType("json");
+
+            xhr.open("GET", "http://127.0.0.1:8000/json-server");
+
+            xhr.send();
+
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status <= 200) {
+                        let data = JSON.parse(xhr.response);
+                        console.log(data);
+                        result.innerHTML = data.name; //设置后xhr.response.name
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

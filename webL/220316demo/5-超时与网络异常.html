@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            height: 100px;
+            width: 200px;
+            border: 1px solid lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+    <button id="btn">发送请求</button>
+
+    <script>
+        const result = document.querySelector('#result');
+        const btn = document.getElementById('btn');
+
+        btn.onclick = () => {
+            const xhr = new XMLHttpRequest();
+
+            //超时设置
+            xhr.timeout = 2000;
+
+            xhr.ontimeout = () => {
+                alert('timeout!!!');
+            }
+
+            xhr.onerror = () => {
+                alert('网络似乎出现了一些问题！');
+            }
+
+            xhr.open('GET', 'http://127.0.0.1:8000/ie?t=' + Date.now());
+
+            xhr.send();
+
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 & xhr.status <= 300) {
+                        result.innerHTML = xhr.response;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

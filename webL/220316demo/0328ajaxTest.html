@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img src="img/edu.jpg" alt="setu">
+
+
+
+
+
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("img").click(function () {
+                $.ajax({
+                    url: "http://127.0.0.1:8000/0328",
+                    dataType: "json",
+                    type: "GET",
+                    success: function (data) {
+                        let dataArr = data.result;
+                        let rand = Math.floor(Math.random() * 4);
+                        $("img").attr('src', dataArr[rand].src);
+                        console.log(data);
+                        console.log(rand);
+                    }
+
+                })
+            });
+        })
+    </script>
+</body>
+
+</html>
