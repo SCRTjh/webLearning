@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2 :style="{opacity}">学习Vue</h2>
+        <button @click="stop">停止变换</button>
+
+    </div>
+
+
+
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                opacity: 1
+            },
+            methods: {
+                stop() {
+                    this.$destroy()
+                }
+
+            },
+            mounted() {   //挂载完毕调用
+                this.timer = setInterval(() => {
+                    this.opacity -= 0.01
+                    if (this.opacity <= 0) this.opacity = 1
+                }, 16)
+            },
+            beforeDestroy() {
+                clearInterval(this.timer)
+            },
+        })
+        // 常用的生命周期钩子:
+        // mounted:发送ajax请求、启动定时器、绑定自定义使劲啊、阅读消息等[初始化操作]
+        // beforeDestroy:清楚定时器、解绑自定义事件、取消订阅消息等[收尾工作]
+        // 关于销毁Vue实例
+        // 1.销毁后借出Vue开发者工具看不到任何信息
+        // 2.销毁后自定义事件会失效,但原生DOM事件依然有效
+        // 3.一般不会在beforeDestroy操作数据,因为即便操作数据,也不会再触发更新流程了
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本列表</title>
+
+
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <ul>
+            <li v-for="(p,index) in persons" :key="index">
+                {{index}}-{{p}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(c,index) in car" :key="index">
+                {{c}}-{{index}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(char,index) of str" :key="index">
+                {{char}}-{{index}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(number, index) in 5" :key="index">
+                {{number}}-{{index}}
+            </li>
+        </ul>
+
+        <input type="text" v-model="keyWord" placeholder="请输入名字">
+        <br>
+        <button @click="sortType = 1">年龄升序</button><button @click="sortType = 2">年龄降序</button><button
+            @click="sortType = 0">原顺序</button>
+        <ul>
+            <li v-for="(s,index) of filStars" :key="s.id">
+                {{s.name}}-{{s.age}}-{{s.sex}}
+            </li>
+        </ul>
+    </div>
+
+    <!-- 面试题:react、vue中的key有什么作用？(key的内部原理)
+
+    1.虚拟DOM中key的作用：
+    key是虚拟DOM对象的标识，当数据发生变化时，vue会根据【新数据】生成【新的虚拟DOM】
+    随后vue进行【新虚拟DOM】与【旧虚拟DOM】的差异比较，比较规则如下
+
+    (1).旧虚拟DOM中找到了与新虚拟DOM相同的key:
+    若虚拟DOM中内容没变，直接使用之前的真是DOM
+    若虚拟DOM中内容变了，则生成新的真实DOM，随后替换掉页面中之前的真实DOM
+    (2).旧虚拟DOM中未找到与心虚你DOM相同的key:
+    创建新的真实DOM，随后渲染到页面
+    用index作为key可能会引发的问题:
+    1.若对数据进行逆序添加、逆序删除等破坏顺序操作:
+    会产生没有必要的真实DOM更新 效率低
+    2.如果结构中所包含输入类的DOM：
+    会产生错误DOM更新 界面有问题
+
+    开发中如何选择key：
+    最好使用每条数据的唯一标识作为key。比如id、手机号、身份证号等唯一值
+    如果不存在对数据的逆序添加、逆序删除等破坏顺序操作，仅用于渲染列表用于展示
+    使用index作为key是没有问题的 -->
+
+
+
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                keyWord: '',
+                persons: [
+                    { id: '001', name: '张三', age: '18' },
+                    { id: '002', name: '李四', age: '19' },
+                    { id: '003', name: '王五', age: '18' }
+                ],
+                car: {
+                    name: '奥迪',
+                    price: '70w'
+                },
+                str: 'hello',
+                stars: [
+                    { id: '001', name: '马冬梅', age: '30', sex: '女' },
+                    { id: '002', name: '周冬雨', age: '18', sex: '女' },
+                    { id: '003', name: '周杰伦', age: '19', sex: '男' },
+                    { id: '004', name: '温兆伦', age: '22', sex: '男' }
+                ],
+                sortType: 0,
+                // filStars: []
+            },
+            // watch: {
+            //     keyWord: {
+            //         immediate: true,
+            //         handler(val) {
+            //             console.log('key被改了');
+            //             this.filStars = this.stars.filter((p) => {
+            //                 return p.name.indexOf(val) !== -1
+            //             })
+            //         }
+            //     }
+            // }
+
+            computed: {
+                filStars() {
+                    const arr = this.stars.filter((p) => {
+                        return p.name.indexOf(this.keyWord) !== -1
+                    })
+
+                    if (this.sortType) {
+                        arr.sort((p1, p2) => {
+                            return this.sortType === 1 ? p2.age - p1.age : p1.age - p2.age
+                        })
+                    }
+                    return arr
+                }
+            }
+
+
+        })
+
+
+    </script>
+</body>
+
+</html>

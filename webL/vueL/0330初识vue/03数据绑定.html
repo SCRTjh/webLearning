@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<script src="./js/vue.js"></script>
+
+<body>
+    <div id="root2">
+        单向数据绑定
+        <!-- 单向数据只能从data流向页面 -->
+        <input type="text" :value="name">
+        <br>
+        双向数据绑定
+        <!-- <input type="text" v-model:value="name"> -->
+        <input type="text" v-model="name">
+        <!-- v-model只能应用在表单类元素上 -->
+        <!-- v-model默认收集value值 -->
+
+    </div>
+
+
+    <script>
+        //创建vue实例
+        new Vue({
+            el: '#root2',  //用于指定当前vue实例为哪个容器服务，通常为css选择器字符串
+            data: {
+                name: "tjh"
+            }
+        })
+    </script>
+</body>
+
+</html>

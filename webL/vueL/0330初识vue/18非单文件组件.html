@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <xuexiao></xuexiao>
+        <hr>
+        <student></student>
+    </div>
+
+
+
+
+
+    <script>
+        const school = Vue.extend({
+            template: `
+            <div>
+                <h3>{{schoolName}}</h3>
+        <h3>{{address}}</h3>
+        <button @click='al'>alert</button>
+        
+        </div>
+            `,
+            data() {
+                return {
+                    schoolName: 'sgg',
+                    address: 'beijing'
+                }
+            },
+            methods: {
+                al() {
+                    alert('woc');
+                }
+            }
+        })
+
+        const student = Vue.extend({
+            template: `
+            <div>
+                <h3>{{studentName}}</h3>
+        <h3>{{age}}</h3>
+                </div>
+            `,
+            data() {
+                return {
+                    studentName: 'aaa',
+                    age: 18
+                }
+            }
+        })
+
+
+        // Vue.components('命名',组件)   全局组件
+
+        new Vue({
+            el: '#root',
+            components: {   //局部注册
+                xuexiao: school,
+                student: student
+            }
+        })
+    </script>
+</body>
+
+</html>

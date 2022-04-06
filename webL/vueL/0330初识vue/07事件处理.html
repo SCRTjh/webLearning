@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>事件处理</h2>
+        <button v-on:click="showInfo1">点我提示信息1</button>
+        <button @click="showInfo2($event,66)">点我提示信息2</button>
+        <a href="www.runoob.com" @click.prevent="showInfo3"></a>
+        <!-- 事件修饰符 -->
+        <!-- prevent:阻止默认事件
+        stop:阻止事件冒泡
+        once:事件只触发一次
+        capture:使用事件的捕获模式
+        self:只有event.target是当前操作的元素时才触发事件
+        passive:事件的默认行为立即执行，无需等待事件回调执行完毕 -->
+        <input type="text" @keydown.caps-lock="showInfo4">
+        <input type="text" @keydown.ctrl.y="showInfo4">
+        <!-- 常见案件别名：enter delete esc space tab(keydown) up right down left -->
+        <!-- 系统修饰键用法特殊：ctrl、alt、shift、meta -->
+        <!-- 配合keyup使用：按下修饰键同时再按下其他键，然后释放，事件才触发 -->
+        <!-- Vue.config.keyCode.自定义键名 = 键码  自定义别名 -->
+
+    </div>
+
+</body>
+<script>
+    const vm = new Vue({
+        el: "#root",
+        data: {
+            name: 'tjh'
+        },
+        methods: {
+            showInfo1(e) {  //不要用箭头函数，不然this就不纸箱vm了
+                console.log(e.target);
+            },
+            showInfo2(e, number) {
+                console.log(e);
+                console.log(number);
+            },
+            showInfo3() {
+                alert("阻止默认事件");
+            },
+            showInfo4(e) {
+                console.log(e.key, e.keyCode);
+            }
+        }
+    })
+</script>
+
+</html>

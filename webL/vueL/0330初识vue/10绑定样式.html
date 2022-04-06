@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./js/vue.js"></script>
+    <style>
+        .red {
+            border: 1px solid red;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .radius {
+            border-radius: 10px;
+        }
+
+        .basic {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root">
+        <div class="basic red" :class="classArr">
+            123
+        </div>
+        <div class="basic" :class="classObj" :style="styleObj">333</div>
+        <div class="basic" :style="[styleObj,styleObj2]">444</div>
+    </div>
+
+
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                classArr: ['pink', 'radius'],
+                classObj: {
+                    pink: true,
+                    radius: false
+                },
+                styleObj: {
+                    fontSize: '40px'
+                },
+                styleObj2: {
+                    backgroundColor: 'cyan'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
