@@ -11,10 +11,26 @@
 </head>
 
 <body>
+    <!-- 关于VueComonent:
+        1.school组件本质是一个名为VueComponent的构造函数,且不是程序员定义的。是Vue.extend生成的。
+
+        2.我们只需要写<school></school>,Vue解析时会帮我们创建school组件的实例对象,
+        即Vue帮我们执行的:new VueComponent(option)
+
+        3.特别注意:每次调用Vue.extend,返回的都是一个全新的VueComponent
+
+        4.关于this指向:
+            (1).组件配置中:
+                    data函数、methods中的函数、watch中的函数、computed中的函数 它们的this均是【VueComponent实例对象】
+            (2).new Vue()配置中:
+                    data函数、methods中的函数、watch中的函数、computed中的函数  它们的this均是【VueComponent实例对象】
+        
+        5.VueComponent的实例对象,以后简称vc(组件实例对象)
+            Vue的实例对象,以后简称vm -->
+
+
     <div id="root">
-        <xuexiao></xuexiao>
-        <hr>
-        <student></student>
+        <app></app>
     </div>
 
 
@@ -22,15 +38,25 @@
 
 
     <script>
+
+
+        const hello = Vue.extend({
+            template: `<div>Hello Vue</div>`,
+            data() {
+                return {
+                    v: hello
+                }
+            },
+        })
+
+
         const school = Vue.extend({
             template: `
             <div>
                 <h3>{{schoolName}}</h3>
         <h3>{{address}}</h3>
         <button @click='al'>alert</button>
-        
-        </div>
-            `,
+        </div>`,
             data() {
                 return {
                     schoolName: 'sgg',
@@ -44,7 +70,29 @@
             }
         })
 
+        // const school = {
+        //     template: `
+        //     <div>
+        //         <h3>{{schoolName}}</h3>
+        // <h3>{{address}}</h3>
+        // <button @click='al'>alert</button>
+        // </div>
+        //     `,
+        //     data() {
+        //         return {
+        //             schoolName: 'sgg',
+        //             address: 'beijing'
+        //         }
+        //     },
+        //     methods: {
+        //         al() {
+        //             alert('woc');
+        //         }
+        //     }
+        // }
+
         const student = Vue.extend({
+            // name:'',
             template: `
             <div>
                 <h3>{{studentName}}</h3>
@@ -59,14 +107,25 @@
             }
         })
 
+        const app = Vue.extend({
+            components: {
+                'my-xuexiao': school,
+                hello: hello,
+                student: student
+            },
+            template: `<div>
+            <my-xuexiao></my-xuexiao>
+            <hello></hello>
+            <student></student></div>`
+        })
+
 
         // Vue.components('命名',组件)   全局组件
 
         new Vue({
             el: '#root',
             components: {   //局部注册
-                xuexiao: school,
-                student: student
+                app: app
             }
         })
     </script>
